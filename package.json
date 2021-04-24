@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "watch": "webpack --config webpack/webpack.dev.js --watch",
-    "build": "npm run clean && webpack --config webpack/webpack.prod.js",
-    "clean": "rimraf dist"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --config webpack/webpack.dev.js --watch"
   },
   "repository": {
     "type": "git",
@@ -21,13 +19,16 @@
   },
   "homepage": "https://github.com/otwm/searcher#readme",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/chrome": "0.0.134",
     "@types/jest": "^26.0.22",
     "@types/ramda": "^0.27.40",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
+    "babel-jest": "^26.6.3",
     "copy-webpack-plugin": "^8.1.1",
     "jest": "^26.6.3",
+    "ts-jest": "^26.5.5",
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.4",
     "webpack": "^5.33.2",
@@ -35,6 +36,7 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "ramda": "^0.27.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
