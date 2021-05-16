@@ -18,7 +18,16 @@ const Search = () => {
 
   const searchKeyword = searchFactory({ start: 10, offset: 10, getUrl })
   const search = () => {
-    alert(1)
+    const url = 'https://www.google.com/'
+    fetch(url, {
+      method: "GET",
+      mode: "cors",
+    }).then(response => response.json()).then((result) => {
+      console.log('it worked!');
+    }).catch(error => {
+      console.error(error);
+    });
+
     axios('https://www.google.com/').then(console.log)
     // searchKeyword({ keyword, count: 10 }).subscribe(value => {
     //   setList(value)

@@ -6,7 +6,12 @@
   "action": {
     "default_popup": "popup.html"
   },
+  "host_permissions" : [
+    "http://*/*",
+    "https://*/*"
+  ],
   "permissions": [
+    "storage", "activeTab", "contextMenus", "scripting"
   ],
   "optional_permissions": [
     "topSites"
