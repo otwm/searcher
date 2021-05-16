@@ -5,5 +5,10 @@
   "manifest_version": 3,
   "action": {
     "default_popup": "popup.html"
-  }
+  },
+  "permissions": [
+  ],
+  "optional_permissions": [
+    "topSites"
+  ]
 }

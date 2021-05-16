@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import { pipe, range } from 'ramda'
 import axios from 'axios'
-import sendWrap from '../utils/sendWrap'
-import releaseKeepAwake = chrome.power.releaseKeepAwake
+import React, { useState } from 'react'
+import searchFactory, { getUrl } from '../actions/searchFactory'
 
 const { log } = console
 
 const Search = () => {
   const [startPage, setStartPage] = useState(1)
   const [keyword, setKeyword] = useState('')
+  const [list, setList] = useState<(string| undefined)[]>([])
   const [max, setMax] = useState(5)
   // @ts-ignore
   const save = ({ text, url }) => {
@@ -16,8 +15,15 @@ const Search = () => {
   }
   const stop = () => {
   }
-  const list: any[] = []
-  const search = () => {}
+
+  const searchKeyword = searchFactory({ start: 10, offset: 10, getUrl })
+  const search = () => {
+    alert(1)
+    axios('https://www.google.com/').then(console.log)
+    // searchKeyword({ keyword, count: 10 }).subscribe(value => {
+    //   setList(value)
+    // })
+  }
   return (
     <div style={{ width: '400px'}}>
       <label>
@@ -32,9 +38,9 @@ const Search = () => {
       <button onClick={search}>search</button>
       <button onClick={stop}>stop</button>
       <ul>
-        {list.map(({url, keword}) => (
+        {list.map((v) => (
           <li>
-            { url }, {keword}
+            { v }
           </li>
         ))}
       </ul>
